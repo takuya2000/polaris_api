@@ -1,19 +1,19 @@
-module V1
+#module V1
 class HonyakusController < ApplicationController
   before_action :set_honyaku, only: [:show, :edit, :update, :destroy]
- # before_action :restrict_access
+  before_action :restrict_access , except: [:regist,:index,:user_list]
   
   # GET /honyakus
   # GET /honyakus.json
   def index
     @honyakus = Honyaku.all
-    render json: @honyakus
+   # render json: @honyakus
   end
 
   # GET /honyakus/1
   # GET /honyakus/1.json
   def show
-    render json: @honyakus
+    render json: @honyaku
   end
 
   # GET /honyakus/new
@@ -25,6 +25,9 @@ class HonyakusController < ApplicationController
   def edit
   end
 
+  def userlist
+    @userlist = ApiKey.all
+  end
 
   def regist
     @reg = ApiKey.new(regist_params)
@@ -97,4 +100,4 @@ class HonyakusController < ApplicationController
       params.require(:honyaku).permit(:question_body, :name)
     end
 end
-end
+#end

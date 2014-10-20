@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   
-  namespace :v1 , constraints: { subdomain: 'api'} do
+  #namespace :v1, path: '/', constraints: { subdomain: 'api'} do
     resources :honyakus
   post 'honyakus/regist/' => 'honyakus#regist'
-  end
+  #get  'honyakus/userlist/' => 'honyakus#userlist'
+  #end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
