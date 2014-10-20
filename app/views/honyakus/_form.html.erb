@@ -1,0 +1,25 @@
+<%= form_for(@honyaku) do |f| %>
+  <% if @honyaku.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@honyaku.errors.count, "error") %> prohibited this honyaku from being saved:</h2>
+
+      <ul>
+      <% @honyaku.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :question_body %><br>
+    <%= f.text_field :question_body %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

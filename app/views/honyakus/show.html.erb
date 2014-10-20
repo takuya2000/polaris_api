@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question body:</strong>
+  <%= @honyaku.question_body %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @honyaku.name %>
+</p>
+
+<%= link_to 'Edit', edit_honyaku_path(@honyaku) %> |
+<%= link_to 'Back', honyakus_path %>
